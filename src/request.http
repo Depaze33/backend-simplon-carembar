@@ -1,0 +1,16 @@
+GET http://localhost:3000/jokes
+
+###
+GET http://localhost:3000/jokes/random
+
+###
+GET http://localhost:3000/jokes/2
+###
+POST http://localhost:3000/jokes
+Content-Type: application/json
+
+{
+  "question": "De quelle couleur sont les parapluies quand il pleut ?",
+  "response": "Ils sont tout verts !"
+}
+
