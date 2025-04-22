@@ -1,4 +1,4 @@
-const swageerJsDoc = require('swagger-jsdoc');
+const swaggerJsDoc = require('swagger-jsdoc');
 
 const options = {
     definition: {
@@ -6,18 +6,24 @@ const options = {
         info: {
             title: 'API de blagues',
             version: '1.0.0',
-            description: 'API de blagues'
+            description: 'API permettant de gérer une collection de blagues'
         },
         contact: {
             name: 'Helly'
         },
         servers: [
             {
-                url: 'https://backend-simplon-carembar.onrender.com'
+                url: 'https://backend-simplon-carembar.onrender.com',
+                description: 'Serveur de production'
+            },
+            {
+                url: 'http://localhost:3000',
+                description: 'Serveur local'
             }
         ]
     },
-    apis: ['./src/controller/*.js']
+    apis: ['./src/routes/*.js', './src/controller/*.js'] // Inclure les routes et les contrôleurs
 };
-const specs = swageerJsDoc(options);
+
+const specs = swaggerJsDoc(options);
 module.exports = specs;
